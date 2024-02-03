@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs") %>
+
+<% if (locals.pageTexts && locals.pageTexts.length > 0) { %>
+    <div class="my-pages-container">
+      <h1 id="my-pages-h1">My Pages:</h1>
+      <ul id="pageList">
+        <% pageTexts.forEach(function(pageText) { %>
+          <li>
+            <div class="li-container">
+              <span class="toggle">[+]</span><p contenteditable="false"><%= pageText %></p>
+              <button class="btn btn-danger delete-btn">Delete</button>
+              <button class="btn btn-primary edit-btn">Edit</button>
+            </div>
+          </li>
+        <% }); %>
+        <li></li>
+      </ul>
+    </div>
+<% } else { %>
+    <div class="no-pages-container">
+      <h1>You didn't write any Pages yet =(</h1><br>
+      <h2>Write your first Page <a href="/new-page">here!</a></h2>
+    </div>
+<% } %>
+
+<%- include("partials/footer.ejs") %>

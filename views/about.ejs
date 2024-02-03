@@ -1,0 +1,21 @@
+<%- include("partials/header.ejs") %>
+
+<% if (locals.name && locals.name.length > 1) { %>
+  <div class="about-full">
+    <div class="about-container">
+      <h1>Hello, <%= name %>!</h1>
+      <p>Thank you very much for visiting my first serious web-site. Maybe it's not really serious for you, but i spent 2 days and 2 nights creating this. almost no breaks!! Hopefully you liked the idea and design of the web-site. Have a wonderful day =3</p>
+    </div>
+  </div>
+<% } else { %>
+  <div class="your-name">
+    <form class="your-name" action="/friend" method="POST">
+      <label for="username">Hey there, what's your name?</label><br>
+      <input class="text" type="text" name="username">
+      <input class="button" type="submit" value="Nice to meet you!">
+    </form>
+  </div>
+<% } %>
+
+
+<%- include("partials/footer.ejs") %>
